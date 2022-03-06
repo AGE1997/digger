@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    validates :nickname
     validates :telephone_number, uniqueness: { case_sensitive: true },
                                  format: { with: /\A[0-9]{10,11}\z/, message: 'is invalid. 電話番号は10桁 or 11桁' }
   end
