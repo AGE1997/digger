@@ -10,5 +10,4 @@ class Profile < ApplicationRecord
   with_options presence: true do
     validates :image, :nickname
   end
-
 end
