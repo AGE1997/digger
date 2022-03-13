@@ -7,6 +7,8 @@ class Profile < ApplicationRecord
   belongs_to :genre
   belongs_to :prefecture
 
-  validates :nickname, presence: true
+  with_options presence: true do
+    validates :image, :nickname
+  end
 
 end
