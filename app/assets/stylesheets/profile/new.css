@@ -1,0 +1,49 @@
+.select-box {
+  height: 30px;
+  width: 50%;
+  background-color: #fff;
+  padding-left: 20px;
+  border: 1px solid #ccc;
+}
+
+.form-any {
+  background: #ccc;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+/* /共通 */
+
+/* プロフィール画像 */
+.img-upload {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2vh 0;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+}
+
+.click-upload>p {
+  margin-bottom: 15px;
+}
+
+/* プロフィール背景 */
+.new-bio {
+  padding: 2vh 0;
+}
+.bio-text {
+  width: 100%;
+  margin-top: 5px;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
