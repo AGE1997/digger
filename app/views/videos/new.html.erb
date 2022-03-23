@@ -1,0 +1,131 @@
+<div class="videos-post-contents">
+  <header class="videos-post-header">
+    <%= render "shared/second-header"%>
+
+  </header>
+  <div class="videos-post-main">
+    <h2 class="videos-post-title">Pick Out</h2>
+    <%= form_with model: @video, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 投稿動画 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        Dance Movie
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :video, id:"post-video" %>
+      </div>
+    </div>
+    <%# /投稿動画 %>
+    <%# 動画名と動画説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        Title
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"例）Line Dance in OKAYAMA（40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          Description
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :introduction, class:"items-text", id:"item-info", placeholder:"動画の説明（必須 1,000文字まで）(MusicName, DancerName, Place etc.)" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /動画名と動画説明 %>
+
+    <%# 動画の詳細 %>
+    <div class="items-detail">
+      <div class="weight-bold-text">Detail</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          Genre
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"video-genre"}) %>
+        <div class="weight-bold-text">
+          Repezen
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"video-prefecture"}) %>
+      </div>
+    </div>
+    <%# /動画の詳細 %>
+
+    <%# 販売価格 %>
+    <div class="sell-price">
+      <div class="weight-bold-text question-text">
+        <span>Price<br>(¥100〜9,999,999)</span>
+        <a class="question" href="#">?</a>
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>価格</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+        </div>
+        <div class="price-content">
+          <span>販売手数料 (10%)</span>
+          <span>
+            <span id='add-tax-price'></span>円
+          </span>
+        </div>
+        <div class="price-content">
+          <span>販売利益</span>
+          <span>
+            <span id='profit'></span>円
+        </div>
+        </span>
+      </div>
+    </div>
+    <%# /販売価格 %>
+
+    <%# 注意書き %>
+    <%# <div class="caution">
+      <p class="sentence">
+        <a href="#">禁止されている出品、</a>
+        <a href="#">行為</a>
+        を必ずご確認ください。
+      </p>
+      <p class="sentence">
+        またブランド品でシリアルナンバー等がある場合はご記載ください。
+        <a href="#">偽ブランドの販売</a>
+        は犯罪であり処罰される可能性があります。
+      </p>
+      <p class="sentence">
+        また、出品をもちまして
+        <a href="#">加盟店規約</a>
+        に同意したことになります。
+      </p> %>
+    <%# </div> %>
+    <%# /注意書き %>
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+  <%# <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">フリマ利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <%# <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %> 
+    <%# <p class="inc">
+      ©︎Furima,Inc.
+    </p>
+  </footer> %> 
+</div>

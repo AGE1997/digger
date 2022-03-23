@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'homes/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -7,5 +8,6 @@ Rails.application.routes.draw do
     post 'profiles', to: 'users/registrations#create_profile'
   end
   get 'videos/index'
-  root to: "videos#index"
+  root to: "homes#index"
+  resources :videos
 end

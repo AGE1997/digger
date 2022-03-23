@@ -68,9 +68,9 @@
   color: #333333;
 }
 
-.brand-list {
-  text-decoration: none;
-  color: #333333;
+.video-post {
+  height: 6vh;
+  width: 3vw;
 }
 
 .lists-right {
