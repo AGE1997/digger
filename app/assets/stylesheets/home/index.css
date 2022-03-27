@@ -39,6 +39,11 @@ a:hover {
   visibility: hidden;
 }
 
+.home-lists {
+	display: flex;
+	justify-content: space-between;
+}
+
 /******* 地図成形 *******/
 #japan-map div div.area div {
 	border: 1px #ffffff solid;
@@ -542,3 +547,12 @@ a:hover {
 
 
 } /* レスポンシブ max-500px */
+
+.video-top {
+	background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+	width: 30vw;
+}

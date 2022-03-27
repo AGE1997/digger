@@ -1,283 +1,315 @@
 <%= render "shared/header" %>
 
+<div class='home-lists'>
+	<div id="japan-map" class="clearfix">
 
-<div id="japan-map" class="clearfix">
-
-<div id="hokkaido-touhoku" class="clearfix">
-	<p class="area-title">北海道・東北</p>
-	<div class="area">
-		<a href="#">
-        	<div id="hokkaido">
-        		<p>北海道</p>
-          	</div>
-		</a>
-		<a href="#">
-			<div id="aomori">
-				<p>青森</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="akita">
-				<p>秋田</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="iwate">
-				<p>岩手</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="yamagata">
-				<p>山形</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="miyagi">
-				<p>宮城</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="fukushima">
-				<p>福島</p>
-			</div>
-		</a>
+	<div id="hokkaido-touhoku" class="clearfix">
+		<p class="area-title">北海道・東北</p>
+		<div class="area">
+			<%= link_to videos_path(prefecture_id:2) do %>
+						<div id="hokkaido">
+							<p>北海道</p>
+							</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:3) do %>
+				<div id="aomori">
+					<p>青森</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:6) do %>
+				<div id="akita">
+					<p>秋田</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:4) do %>
+				<div id="iwate">
+					<p>岩手</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:5) do %>
+				<div id="yamagata">
+					<p>山形</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:5) do %>
+				<div id="miyagi">
+					<p>宮城</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:8) do %>
+				<div id="fukushima">
+					<p>福島</p>
+				</div>
+			<% end %>
+		</div>
 	</div>
-</div>
 
-<div id="kantou">
-	<p class="area-title">関東</p>
-	<div class="area">
-		<a href="#">
-			<div id="gunma">
-				<p>群馬</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="tochigi">
-				<p>栃木</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="ibaraki">
-				<p>茨城</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="saitama">
-				<p>埼玉</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="chiba">
-				<p>千葉</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="tokyo">
-				<p>東京</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="kanagawa">
-				<p>神奈川</p>
-			</div>
-		</a>
+	<div id="kantou">
+		<p class="area-title">関東</p>
+		<div class="area">
+			<%= link_to videos_path(prefecture_id:11) do %>
+				<div id="gunma">
+					<p>群馬</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:10) do %>
+				<div id="tochigi">
+					<p>栃木</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:9) do %>
+				<div id="ibaraki">
+					<p>茨城</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:12) do %>
+				<div id="saitama">
+					<p>埼玉</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:13) do %>
+				<div id="chiba">
+					<p>千葉</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:14) do %>
+				<div id="tokyo">
+					<p>東京</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:15) do %>
+				<div id="kanagawa">
+					<p>神奈川</p>
+				</div>
+			<% end %>
+		</div>
 	</div>
-</div>
 
-<div id="tyubu" class="clearfix">
-	<p class="area-title">中部</p>
-	<div class="area">
-		<a href="#">
-			<div id="nigata">
-				<p>新潟</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="toyama">
-				<p>富山</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="ishikawa">
-				<p>石川</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="fukui">
-				<p>福井</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="nagano">
-				<p>長野</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="gifu">
-				<p>岐阜</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="yamanashi">
-				<p>山梨</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="aichi">
-				<p>愛知</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="shizuoka">
-				<p>静岡</p>
-			</div>
-		</a>
+	<div id="tyubu" class="clearfix">
+		<p class="area-title">中部</p>
+		<div class="area">
+			<%= link_to videos_path(prefecture_id:16) do %>
+				<div id="nigata">
+					<p>新潟</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:17) do %>
+				<div id="toyama">
+					<p>富山</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:18) do %>
+				<div id="ishikawa">
+					<p>石川</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:19) do %>
+				<div id="fukui">
+					<p>福井</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:21) do %>
+				<div id="nagano">
+					<p>長野</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:22) do %>
+				<div id="gifu">
+					<p>岐阜</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:20) do %>
+				<div id="yamanashi">
+					<p>山梨</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:24) do %>
+				<div id="aichi">
+					<p>愛知</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:23) do %>
+				<div id="shizuoka">
+					<p>静岡</p>
+				</div>
+			<% end %>
+		</div>
 	</div>
-</div>
 
-<div id="kinki" class="clearfix">
-	<p class="area-title">近畿</p>
-	<div class="area">
-		<a href="#">
-			<div id="kyoto">
-				<p>京都</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="shiga">
-				<p>滋賀</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="osaka">
-				<p>大阪</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="nara">
-				<p>奈良</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="mie">
-				<p>三重</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="wakayama">
-				<p>和歌山</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="hyougo">
-				<p>兵庫</p>
-			</div>
-		</a>
+	<div id="kinki" class="clearfix">
+		<p class="area-title">近畿</p>
+		<div class="area">
+			<%= link_to videos_path(prefecture_id:27) do %>
+				<div id="kyoto">
+					<p>京都</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:26) do %>
+				<div id="shiga">
+					<p>滋賀</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:28) do %>
+				<div id="osaka">
+					<p>大阪</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:30) do %>
+				<div id="nara">
+					<p>奈良</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:25) do %>
+				<div id="mie">
+					<p>三重</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:31) do %>
+				<div id="wakayama">
+					<p>和歌山</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:29) do %>
+				<div id="hyougo">
+					<p>兵庫</p>
+				</div>
+			<% end %>
+		</div>
 	</div>
-</div>
 
-<div id="tyugoku" class="clearfix">
-	<p class="area-title">中国</p>
-	<div class="area">
-		<a href="#">
-			<div id="tottori">
-				<p>鳥取</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="okayama">
-				<p>岡山</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="shimane">
-				<p>島根</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="hiroshima">
-				<p>広島</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="yamaguchi">
-				<p>山口</p>
-			</div>
-		</a>
+	<div id="tyugoku" class="clearfix">
+		<p class="area-title">中国</p>
+		<div class="area">
+			<%= link_to videos_path(prefecture_id:32) do %>
+				<div id="tottori">
+					<p>鳥取</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:34) do %>
+				<div id="okayama">
+					<p>岡山</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:33) do %>
+				<div id="shimane">
+					<p>島根</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:35) do %>
+				<div id="hiroshima">
+					<p>広島</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:36) do %>
+				<div id="yamaguchi">
+					<p>山口</p>
+				</div>
+			<% end %>
+		</div>
 	</div>
-</div>
 
-<div id="shikoku" class="clearfix">
-	<p class="area-title">四国</p>
-	<div class="area">
-		<a href="#">
-			<div id="kagawa">
-				<p>香川</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="ehime">
-				<p>愛媛</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="tokushima">
-				<p>徳島</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="kouchi">
-				<p>高知</p>
-			</div>
-		</a>
+	<div id="shikoku" class="clearfix">
+		<p class="area-title">四国</p>
+		<div class="area">
+			<%= link_to videos_path(prefecture_id:38) do %>
+				<div id="kagawa">
+					<p>香川</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:39) do %>
+				<div id="ehime">
+					<p>愛媛</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:37) do %>
+				<div id="tokushima">
+					<p>徳島</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:40) do %>
+				<div id="kouchi">
+					<p>高知</p>
+				</div>
+			<% end %>
+		</div>
 	</div>
-</div>
 
-<div id="kyusyu" class="clearfix">
-	<p class="area-title">九州・沖縄</p>
-	<div class="area">
-		<a href="#">
-			<div id="fukuoka">
-				<p>福岡</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="saga">
-				<p>佐賀</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="nagasaki">
-				<p>長崎</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="oita">
-				<p>大分</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="kumamoto">
-				<p>熊本</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="miyazaki">
-				<p>宮崎</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="kagoshima">
-				<p>鹿児島</p>
-			</div>
-		</a>
-		<a href="#">
-			<div id="okinawa">
-				<p>沖縄</p>
-			</div>
-		</a>
+	<div id="kyusyu" class="clearfix">
+		<p class="area-title">九州・沖縄</p>
+		<div class="area">
+			<%= link_to videos_path(prefecture_id:41) do %>
+				<div id="fukuoka">
+					<p>福岡</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:42) do %>
+				<div id="saga">
+					<p>佐賀</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:43) do %>
+				<div id="nagasaki">
+					<p>長崎</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:45) do %>
+				<div id="oita">
+					<p>大分</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:44) do %>
+				<div id="kumamoto">
+					<p>熊本</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:46) do %>
+				<div id="miyazaki">
+					<p>宮崎</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:47) do %>
+				<div id="kagoshima">
+					<p>鹿児島</p>
+				</div>
+			<% end %>
+			<%= link_to videos_path(prefecture_id:48) do %>
+				<div id="okinawa">
+					<p>沖縄</p>
+				</div>
+			<% end %>
+		</div>
 	</div>
-</div>
 
-</div> <!-- japan-map -->
+	</div> <!-- japan-map -->
+
+  <div class='video-top'>
+    <h2 class='title'>ピックアップカテゴリー</h2>
+    <div class="subtitle" >
+      
+    </div>
+    <ul class='video-lists'>
+      <% @videos.present? %>
+      <% @videos.each do |video| %>
+      <li class='list'>
+        <%= link_to video_path(video.id), method: :get do %>
+        <div class='video-img-content'>
+          <video src="<%= rails_blob_path(video.video) %>" class="video-img" type="video/mp4" controls></video>
+        </div>
+        <div class='video-info'>
+          <h3 class='video-name'>
+            <%= video.title %>
+          </h3>
+          <div class='video-price'>
+            <span><%= video.price %>円<br></span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

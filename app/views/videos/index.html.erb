@@ -3,6 +3,39 @@
 <p>Find me in app/views/videos/index.html.erb</p>
 
 
+  <%# 商品一覧 %>
+  <div class='video-contents'>
+    <h2 class='title'>ピックアップカテゴリー</h2>
+    <div class="subtitle" >
+      
+    </div>
+    <ul class='video-lists'>
+      <% @videos.present? %>
+      <% @videos.each do |video| %>
+      <li class='list'>
+        <%= link_to video_path(video.id), method: :get do %>
+        <div class='video-img-content'>
+          <video src="<%= rails_blob_path(video.video) %>" class="video-img" type="video/mp4" controls></video>
+        </div>
+        <div class='video-info'>
+          <h3 class='video-name'>
+            <%= video.title %>
+          </h3>
+          <div class='video-price'>
+            <span><%= video.price %>円<br></span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <%# /商品一覧 %>
+</div>
 <%= link_to new_video_path, class: 'purchase-btn' do %>
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag('icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon") %>
