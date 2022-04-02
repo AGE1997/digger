@@ -19,6 +19,9 @@
   height: 10vh;
   width: 5vw;
   margin-right: 10vw;
+  position: absolute;
+  top: 0px;
+  left: 100px;
 }
 
 .search-form {
@@ -68,9 +71,9 @@
   color: #333333;
 }
 
-.brand-list {
-  text-decoration: none;
-  color: #333333;
+.video-post {
+  height: 6vh;
+  width: 3vw;
 }
 
 .lists-right {
