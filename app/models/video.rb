@@ -13,7 +13,6 @@ class Video < ApplicationRecord
                               message: 'is invalid. Price is out of setting range' }
   end
 
-  validates :genre_id, :prefecture_id, 
+  validates :genre_id, :prefecture_id,
             numericality: { other_than: 1, message: "can't be blank" }
-            
 end

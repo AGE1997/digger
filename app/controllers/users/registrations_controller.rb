@@ -23,6 +23,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # @profile = Profile.new(profile_params)
     @profile = @user.build_profile(profile_params)
     render :new_profile and return unless @profile.valid?
+
     # @user.build_profile(@profile.attributes)
     @user.save
     session['devise.regist_data']['user'].clear
