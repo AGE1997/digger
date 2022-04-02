@@ -1,9 +1,5 @@
 class VideosController < ApplicationController
 
-  def home
-    @videos = Video.includes(:user).order('created_at DESC')
-  end
-
   def index
     @videos = Video.where(prefecture_id: params[:prefecture_id])
   end

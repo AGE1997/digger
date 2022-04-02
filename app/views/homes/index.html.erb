@@ -2,7 +2,6 @@
 
 <div class='home-lists'>
 	<div id="japan-map" class="clearfix">
-
 	<div id="hokkaido-touhoku" class="clearfix">
 		<p class="area-title">北海道・東北</p>
 		<div class="area">
@@ -283,31 +282,28 @@
 	</div> <!-- japan-map -->
 
   <div class='video-top'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
-    <div class="subtitle" >
-      
-    </div>
-    <ul class='video-lists'>
+    <h2 class='title-pic'>ピックアップ</h2>
+    <ul class='pic-lists'>
       <% @videos.present? %>
       <% @videos.each do |video| %>
-      <li class='list'>
+      <li class='list-info'>
         <%= link_to video_path(video.id), method: :get do %>
         <div class='video-img-content'>
           <video src="<%= rails_blob_path(video.video) %>" class="video-img" type="video/mp4" controls></video>
-        </div>
-        <div class='video-info'>
-          <h3 class='video-name'>
-            <%= video.title %>
-          </h3>
-					<h4 class='posted-nickname'>
-						
-          <div class='video-price'>
-            <span><%= video.price %>円<br></span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
-          </div>
+					<div class='video-info'>
+						<h3 class='video-name'>
+							<%= video.title %>
+						</h3>
+						<h4 class='posted-nickname'>
+						</h4>
+						<div class='video-price'>
+							<span><%= video.price %>円<br></span>
+							<div class='star-btn'>
+								<%= image_tag "star.png", class:"star-icon" %>
+								<span class='star-count'>0</span>
+							</div>
+						</div>
+					</div>
         </div>
         <% end %>
       </li>
