@@ -20,10 +20,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create_profile
     @user = User.new(session['devise.regist_data']['user'])
-    @profile = Profile.new(profile_params)
+    # @profile = Profile.new(profile_params)
+    @profile = @user.build_profile(profile_params)
     render :new_profile and return unless @profile.valid?
-
-    @user.build_profile(@profile.attributes)
+    # @user.build_profile(@profile.attributes)
     @user.save
     session['devise.regist_data']['user'].clear
     sign_in(:user, @user)
