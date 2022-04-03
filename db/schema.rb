@@ -70,12 +70,15 @@ ActiveRecord::Schema.define(version: 2022_03_15_103710) do
     t.integer "prefecture_id", null: false
     t.integer "price", null: false
     t.bigint "user_id", null: false
+    t.bigint "profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_videos_on_profile_id"
     t.index ["user_id"], name: "index_videos_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "profiles", "users"
+  add_foreign_key "videos", "profiles"
   add_foreign_key "videos", "users"
 end

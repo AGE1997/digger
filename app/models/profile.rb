@@ -1,6 +1,7 @@
 class Profile < ApplicationRecord
   belongs_to :user, optional: true
   has_one_attached :image
+  has_many :videos
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :sex

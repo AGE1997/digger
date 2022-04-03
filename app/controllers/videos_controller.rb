@@ -16,6 +16,10 @@ class VideosController < ApplicationController
     end
   end
 
+  def show
+    @video = Video.find(params[:id])
+  end
+
   def search
     index
     render :index
@@ -25,6 +29,6 @@ class VideosController < ApplicationController
 
   def video_params
     params.require(:video).permit(:title, :introduction, :genre_id, :prefecture_id, :price,
-                                  :video).merge(user_id: current_user.id)
+                                  :video).merge(user_id: current_user.id, profile_id: current_user.profile.id)
   end
 end
