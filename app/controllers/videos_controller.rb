@@ -16,6 +16,10 @@ class VideosController < ApplicationController
     end
   end
 
+  def show
+    @video = Video.find(params[:id])
+  end
+  
   def search
     index
     render :index
