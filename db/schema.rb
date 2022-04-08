@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_15_103710) do
+ActiveRecord::Schema.define(version: 2022_04_04_123308) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(version: 2022_03_15_103710) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "profile_id", null: false
+    t.bigint "video_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_orders_on_profile_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+    t.index ["video_id"], name: "index_orders_on_video_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -78,6 +90,9 @@ ActiveRecord::Schema.define(version: 2022_03_15_103710) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "profiles"
+  add_foreign_key "orders", "users"
+  add_foreign_key "orders", "videos"
   add_foreign_key "profiles", "users"
   add_foreign_key "videos", "profiles"
   add_foreign_key "videos", "users"

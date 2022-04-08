@@ -2,6 +2,7 @@ class Video < ApplicationRecord
   belongs_to :user
   has_one_attached :video
   belongs_to :profile
+  has_many :orders
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
