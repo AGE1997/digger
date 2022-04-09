@@ -29,7 +29,7 @@
       <%= link_to "削除", video_path(@video.id), method: :delete, class:"video-destroy" %>
 
       <% else %>
-      <%= link_to "購入画面に進む", new_video_order_pathhe(@video.id),class:"video-red-btn"%>
+      <%= link_to "購入画面に進む", new_video_order_path(@video.id),class:"video-red-btn"%>
       <% end %>
     <% end %>
 
