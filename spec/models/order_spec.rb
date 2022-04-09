@@ -11,7 +11,7 @@ RSpec.describe Order, type: :model do
         expect(@order).to be_valid
       end
     end
-    
+
     context '購入動画情報の保存ができない場合' do
       it 'prefectureが空では保存できない' do
         @order.prefecture_id = 1
