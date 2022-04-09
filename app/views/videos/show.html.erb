@@ -28,8 +28,8 @@
       <p class="or-text">or</p>
       <%= link_to "削除", video_path(@video.id), method: :delete, class:"video-destroy" %>
 
-      <%# <% else current_user.id != @order.user_id %> %>
-      <%# <%= link_to "購入画面に進む", item_purchases_path(@item.id),class:"item-red-btn"%> %>
+      <% else %>
+      <%= link_to "購入画面に進む", new_video_order_path(@video.id),class:"video-red-btn"%>
       <% end %>
     <% end %>
 
