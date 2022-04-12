@@ -8,19 +8,11 @@
     </h2>
     <div class="video-img-content">
       <video src="<%= rails_blob_path(@video.video) %>" class="video-img" type="video/mp4" controls></video>
-      <%# <div class="sold-out">
-      <% if @item.purchase.present?%>
-        <%# <span>Sold Out!!</span>
-      <% end %>
-      <%# </div> %> 
     </div>
     <div class="video-price-box">
       <span class="video-price">
         <%= "¥ #{@video.price}" %> 
       </span>
-      <%# <span class="item-postage">
-        <%= @item.shipping_charges.name %>
-      <%# </span> %> 
     </div>
     <% if user_signed_in? %>
       <% if current_user.id == @video.user_id %>
@@ -28,7 +20,7 @@
       <p class="or-text">or</p>
       <%= link_to "削除", video_path(@video.id), method: :delete, class:"video-destroy" %>
 
-      <% else %>
+      <% else current_user.id != @order.user_id %>
       <%= link_to "購入画面に進む", new_video_order_path(@video.id),class:"video-red-btn"%>
       <% end %>
     <% end %>
@@ -63,7 +55,7 @@
       </div>
     </div>
   </div>
-  <%# /商品の概要 %>
+  <%# /動画の概要 %>
 
   <div class="comment-box">
     <form>

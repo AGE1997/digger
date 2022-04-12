@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_video, only: [:new, :create]
+  before_action :contributor_confirmation
+  
   def new
     @order = Order.new
   end
@@ -33,5 +36,9 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def contributor_confirmation
+    redirect_to root_path if current_user == @video.user
   end
 end

@@ -21,6 +21,7 @@ class VideosController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
   end
 
   def edit
@@ -56,6 +57,6 @@ class VideosController < ApplicationController
   end
 
   def contributor_confirmation
-    redirect_to root_path unless current_user == @item.user
+    redirect_to root_path unless current_user == @video.user
   end
 end
