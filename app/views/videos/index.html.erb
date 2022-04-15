@@ -7,27 +7,34 @@
   <div class='video-contents'>
     <h2 class='title'>ピックアップ</h2>
     <ul class='video-lists'>
-      <% @videos.present? %>
       <% @videos.each do |video| %>
-      <li class='list'>
-        <%= link_to video_path(video.id), method: :get do %>
-        <div class='video-img-content'>
-          <video src="<%= rails_blob_path(video.video) %>" class="video-img" type="video/mp4" controls></video>
-        </div>
-        <div class='video-info'>
-          <h3 class='video-name'>
-            <%= video.title %>
-          </h3>
-          <div class='video-price'>
-            <span><%= video.price %>円<br></span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
+        <li class='list'>
+          <%= link_to video_path(video.id), method: :get do %>
+            <%# 動画の表示 %>
+            <% if current_user.id == video.user_id or Order.find_by(user_id: current_user.id, video_id: video.id).present?%>
+              <div class="video-img-content">
+                <video src="<%= rails_blob_path(video.video) %>" class="video-img" type="video/mp4" controls></video>
+              </div>
+            <% else %>
+              <div class="video-img-content">
+                <%= video_tag rails_blob_path(video.video), class: "video-img" %>
+              </div>
+            <% end %>
+            <%#/ 動画の表示 %>
+            <div class='video-info'>
+              <h3 class='video-name'>
+                <%= video.title %>
+              </h3>
+              <div class='video-price'>
+                <span><%= video.price %>円<br></span>
+                <div class='star-btn'>
+                  <%= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'>0</span>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <% end %>
-      </li>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </div>

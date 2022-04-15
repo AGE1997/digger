@@ -6,24 +6,47 @@
     <h2 class="name">
       <%= @video.title %>
     </h2>
+  <%# 動画の表示 %>
+  <%# 動画が再生できるのは投稿者か購入者%>
+  <% if current_user.id == @video.user_id or current_user.id == @order&.user_id %>
     <div class="video-img-content">
       <video src="<%= rails_blob_path(@video.video) %>" class="video-img" type="video/mp4" controls></video>
     </div>
+  <% else %>
+    <div class="video-img-content">
+      <%= video_tag rails_blob_path(@video.video), class: "video-img" %>
+    </div>
+  <% end %>
+  <%#/ 動画の表示 %>
+
     <div class="video-price-box">
       <span class="video-price">
         <%= "¥ #{@video.price}" %> 
       </span>
     </div>
+  <%# 動画のボタンの表示 %>
     <% if user_signed_in? %>
-      <% if current_user.id == @video.user_id %>
-      <%= link_to "編集", edit_video_path(@video.id), method: :get, class: "video-red-btn" %>
-      <p class="or-text">or</p>
-      <%= link_to "削除", video_path(@video.id), method: :delete, class:"video-destroy" %>
+      <% if @video.orders.blank? %>
+        <% if current_user.id == @video.user_id %>
+        <%= link_to "編集", edit_video_path(@video.id), method: :get, class: "video-red-btn" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除", video_path(@video.id), method: :delete, class:"video-destroy" %>
 
-      <% else current_user.id != @order.user_id %>
-      <%= link_to "購入画面に進む", new_video_order_path(@video.id),class:"video-red-btn"%>
+        <% else @video.orders.blank? %>
+        <%= link_to "購入画面に進む", new_video_order_path(@video.id),class:"video-red-btn"%>
+      
+        <% end %>
+
+      <% elsif current_user.id == @video.user_id %>
+        <%= link_to "編集", edit_video_path(@video.id), method: :get, class: "video-red-btn" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除", video_path(@video.id), method: :delete, class:"video-destroy" %>
+      <% elsif current_user.id != @order.user_id %>
+        <%= link_to "購入画面に進む", new_video_order_path(@video.id),class:"video-red-btn"%>
+      <% else %>
       <% end %>
     <% end %>
+  <%#/ 動画のボタンの表示 %>
 
     <div class="video-introduction-box">
       <span><%= @video.introduction %></span>
