@@ -1,0 +1,92 @@
+<%= render "shared/second-header"%>
+
+<%= form_with model: @profile, class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      日本中のかっこいいダンサーを発掘しよう！
+    </h1>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">プロフィール画像</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ニックネーム</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"ニックネーム", maxlength:"40" %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">性別</label>
+      <span class="form-any">任意</span>
+    </div>
+    <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"sex"}) %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ジャンル</label>
+      <span class="form-any">任意</span>
+    </div>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre"}) %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">レペゼン</label>
+      <span class="form-any">任意</span>
+    </div>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">生年月日</label>
+      <span class="form-any">任意</span>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :birthday,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1930,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+
+  <div class="new-bio">
+    <div class='form-text-wrap'>
+      <label class="form-text">背景</label>
+      <span class="form-any">任意</span>
+    </div>
+    <%= f.text_area :biography, class:"bio-text", id:"biography", placeholder:"bio", rows:"5", maxlength:"1000" %>
+  </div>
+
+  <%# 下部ボタン %>
+  <div class="sell-btn-contents">
+    <%= f.submit "変更する" ,class:"sell-btn" %>
+    <%=link_to 'もどる', edit_profile_path(@profile.id), class:"back-btn" %>
+  </div>
+  <%# /下部ボタン %>
+</div>
+<% end %>
