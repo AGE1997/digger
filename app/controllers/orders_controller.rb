@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_video, only: [:new, :create]
   before_action :contributor_confirmation
-  
+
   def new
     @order = Order.new
   end

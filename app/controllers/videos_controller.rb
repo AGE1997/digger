@@ -5,9 +5,6 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.where(prefecture_id: params[:prefecture_id])
-    # unless @video.orders.blank?
-    #   @order = Order.find(params[:id])
-    # end
   end
 
   def new

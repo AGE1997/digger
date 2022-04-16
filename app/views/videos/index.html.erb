@@ -1,7 +1,4 @@
 <%= render "shared/header" %>
-<h1>Videos#index</h1>
-<p>Find me in app/views/videos/index.html.erb</p>
-
 
   <%# 商品一覧 %>
   <div class='video-contents'>
@@ -11,15 +8,18 @@
         <li class='list'>
           <%= link_to video_path(video.id), method: :get do %>
             <%# 動画の表示 %>
-            <% if current_user.id == video.user_id or Order.find_by(user_id: current_user.id, video_id: video.id).present?%>
-              <div class="video-img-content">
-                <video src="<%= rails_blob_path(video.video) %>" class="video-img" type="video/mp4" controls></video>
-              </div>
+            <% if user_signed_in? %>
+              <% if current_user.id == video.user_id or Order.find_by(user_id: current_user.id, video_id: video.id).present?%>
+                <div class="video-img-content">
+                  <video src="<%= rails_blob_path(video.video) %>" class="video-img" type="video/mp4" controls></video>
+              <% else %>
+                <div class="video-img-content">
+                  <%= video_tag rails_blob_path(video.video), class: "video-img" %>
+              <% end %>
             <% else %>
               <div class="video-img-content">
                 <%= video_tag rails_blob_path(video.video), class: "video-img" %>
-              </div>
-            <% end %>
+            <% end %>	
             <%#/ 動画の表示 %>
             <div class='video-info'>
               <h3 class='video-name'>

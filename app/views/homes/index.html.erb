@@ -284,12 +284,23 @@
   <div class='video-top'>
     <h2 class='title-pic'>ピックアップ</h2>
     <ul class='pic-lists'>
-      <% @videos.present? %>
       <% @videos.each do |video| %>
       <li class='list-info'>
         <%= link_to video_path(video.id), method: :get do %>
-        <div class='video-img-content'>
-          <video src="<%= rails_blob_path(video.video) %>" class="video-img" type="video/mp4" controls></video>
+				  <%# 動画の表示 %>
+					<% if user_signed_in? %>
+						<% if current_user.id == video.user_id or Order.find_by(user_id: current_user.id, video_id: video.id).present?%>
+							<div class="video-img-content">
+								<video src="<%= rails_blob_path(video.video) %>" class="video-img" type="video/mp4" controls></video>
+						<% else %>
+							<div class="video-img-content">
+								<%= video_tag rails_blob_path(video.video), class: "video-img" %>
+						<% end %>
+					<% else %>
+						<div class="video-img-content">
+							<%= video_tag rails_blob_path(video.video), class: "video-img" %>
+					<% end %>	
+          <%#/ 動画の表示 %>
 					<div class='video-info'>
 						<h3 class='video-name'>
 							<%= video.title %>
@@ -304,7 +315,7 @@
 							</div>
 						</div>
 					</div>
-        </div>
+				</div>
         <% end %>
       </li>
       <% end %>
