@@ -21,7 +21,9 @@ class VideosController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    unless @video.orders.blank?
+      @order = Order.find(params[:id])
+    end
   end
 
   def edit

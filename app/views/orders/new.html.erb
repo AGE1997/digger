@@ -7,14 +7,11 @@
     </h1>
     <%# 購入内容の表示 %>
     <div class='buy-video-info'>
-      <video src="<%= rails_blob_path(@video.video) %>" class="buy-item-img" type="video/mp4" controls></video>
+      <%= video_tag rails_blob_path(@video.video), class: "buy-item-img" %>
       <div class='buy-video-right-content'>
         <h2 class='buy-video-text'>
           <%= @video.title %>
         </h2>
-        <div class='buy-video-price'>
-          <p class='video-price-text'>¥<%= @video.price %></p>
-        </div>
       </div>
     </div>
     <%# /購入内容の表示 %>
