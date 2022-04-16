@@ -1,6 +1,4 @@
 class ProfilesController < ApplicationController
-
-
   def edit
     @profile = Profile.find(params[:id])
   end
@@ -13,7 +11,6 @@ class ProfilesController < ApplicationController
       render :edit
     end
   end
-
 
   private
 
