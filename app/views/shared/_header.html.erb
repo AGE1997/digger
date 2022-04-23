@@ -16,8 +16,13 @@
     </ul>
     <ul class='lists-right'>
     <% if user_signed_in? %>
-      <li><%= link_to current_user.profile.nickname, edit_profile_path(current_user.profile.id), class: "user-nickname" %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <li><%= image_tag(current_user.profile.image, class: "profile-image", id: "lists") %></li>
+      <ul class="show-lists hidden" id="pull-down">
+        <li class="pull-down-list"><%= link_to current_user.profile.nickname, profile_path(current_user.profile.id) %></li>
+        <li class="pull-down-list"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <li class="pull-down-list">リスト3</li>
+        <li class="pull-down-list">リスト4</li>
+      </ul>
     <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
