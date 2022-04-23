@@ -1,0 +1,89 @@
+.profile-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.profile-box {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 1200px;
+  padding: 10vh 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile-box>.right-contents {
+  height: 33vh;
+  width: 20vw;
+}
+.profile-img {
+  height: 33vh;
+  width: 20vw;
+}
+
+.profile-main {
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.profile-name {
+  display: flex;
+  font-size: 18px;
+}
+.nickname {
+  font-size: 30px;
+  margin: 20px 0px;
+  padding: 2vh 0 2vh 2vw;
+}
+
+.sex {
+  margin: 20px 0px;
+  padding: 2.5vh 2vw 2vh 0;
+}
+
+.profile-introduction {
+  display: flex;
+  margin: 0 16px 0 0px;
+  padding: 2vh 0 2vh 2vw;
+}
+
+.profile-detail {
+  padding-right: 40px;
+}
+
+.profile-bio {
+  padding: 2vh 0 0 2vw;
+  margin: 0 0 20px 0;
+}
+
+/* 下部ボタン */
+.profile-btn-contents {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-btn {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  width: 40vw;
+  height: 50px;
+  font-size: 18px;
+  margin-bottom: 4vh;
+  padding: 10px;
+}
+
+.back-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  width: 40vw;
+  text-decoration: none;
+}
+
+/* /下部ボタン */

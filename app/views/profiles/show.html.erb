@@ -1,0 +1,37 @@
+<%= render "shared/header" %>
+
+<%# プロフィールの概要 %>
+<div class="profile-show">
+  <div class="profile-box">
+    <div class="right-contents">
+      <%= image_tag(@profile.image, class: "profile-img") %>
+    </div>
+    <div class="left-contents">
+      <ul class="profile-main">
+        <li class="profile-name">
+          <div class="nickname"><%= @profile.nickname%></div>
+          <div class="sex"><%= @profile.sex.name %></div>
+        </li>
+        <li class="profile-introduction">
+          <div class="profile-detail"><%= @profile.birthday %></div>
+          <div class="profile-detail"><%= @profile.prefecture.name %></div>
+          <div class="profile-detail"><%= @profile.genre.name %></div>
+        </li>
+        <li class="profile-bio">
+          <%= @profile.biography%>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <%#/ プロフィールの概要 %>
+
+  <%# 下部ボタン %>
+  <% if current_user.id == @profile.id %>
+    <div class="profile-btn-contents">
+      <%= link_to '編集する', edit_profile_path(current_user.profile.id), class:"edit-btn" %>
+      <%= link_to "もどる" , "/",class:"back-btn" %>
+    </div>
+  <% else %>
+  <% end %>
+  <%# /下部ボタン %>
+</div>

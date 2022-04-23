@@ -82,18 +82,36 @@
   align-items: flex-end;
 }
 
+.profile-image {
+  height: 6vh;
+  width: 6vw;
+}
 
-.user-nickname {
+/* .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
   color: #333333;
   font-weight: bold;
-}
+} */
 
 
-.logout {
+/* .logout {
   text-decoration: none;
   color: #333333;
+} */
+
+.show-lists{
+  width: 150px;
+  position: absolute;
+  right:215px;
+  top: 120px;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.pull-down-list{
+  padding: 15px 35px 15px 15px;
+  border: 1px solid #eee;
 }
 
 .login {
@@ -106,4 +124,8 @@
 .sign-up {
   text-decoration: none;
   color: #333333;
+}
+
+.hidden{
+  display: none;
 }
