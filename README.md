@@ -55,6 +55,7 @@ digger
 
 ## 目指した課題解決
 コロナ禍でダンサーがイベントやレッスンのみで収益化を諮るのが難しくなっている。
+
 その課題を解決するために、ダンサーが自身で練習している動画、イベントでのショーケース動画等に価値をつけ投稿し、それを購入してもらうことで、自身のダンスに価値が高まっていき、収益化にもつながる。
 
 ## 洗い出した要件
@@ -180,3 +181,15 @@ digger
 - belongs_to :videos
 
 [![Image from Gyazo](https://i.gyazo.com/3d13c3b3d1818fec5d784abcb69b02e3.png)](https://gyazo.com/3d13c3b3d1818fec5d784abcb69b02e3)
+
+
+# ローカルでの動作方法
+以下のコマンドを順に実行
+
+% cd xxxxxxx
+
+% git clone https://github.com/AGE1997/digger.git
+
+% bundle install
+
+% yarn install
