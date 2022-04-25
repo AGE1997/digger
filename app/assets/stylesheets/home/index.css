@@ -38,6 +38,8 @@ a:hover {
 
 .home-lists {
 	width: 100vw;
+	position: absolute;
+	top: 150px;
 	display: flex;
 	justify-content: space-between;
 }

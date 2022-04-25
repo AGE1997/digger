@@ -1,12 +1,12 @@
 .transaction-contents {
   width: 100vw;
-  background-color: #f5f5f5;
+  background-color: #FFF;
   display: flex;
   justify-content: center;
 }
 
 .transaction-main {
-  background-color: #FFF;
+  background-color: #f5f5f5;
   width: 70vw;
   min-width: 450px;
   padding: 10vh 10vw;
@@ -14,7 +14,7 @@
 
 .transaction-title-text {
   text-align: center;
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid #FFF;
   font-weight: bold;
   font-size: 22px;
 }
@@ -22,13 +22,13 @@
 /* 購入内容の表示 */
 .buy-video-info {
   height: 150px;
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid #FFF;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.buy-item-img {
+.buy-video-img {
   margin-right: 20px;
   height: 130px;
   width: 250px;
@@ -64,7 +64,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid #FFF;
   font-weight: bold;
 }
 
@@ -80,7 +80,7 @@
 
 /* カード情報の入力 */
 .credit-card-form {
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid #FFF;
   margin-top: 15px;
   padding-bottom: 30px;
 }
@@ -150,4 +150,5 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  text-align: center;
 }

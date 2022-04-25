@@ -1,6 +1,8 @@
 .profile-show {
-  background-color: #f8f8f8;
+  background-color: #FFF;
   width: 100vw;
+  position: absolute;
+	top: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +10,7 @@
 }
 
 .profile-box {
-  background-color: #FFF;
+  background-color: #f8f8f8;
   width: 70vw;
   min-width: 1200px;
   padding: 10vh 5vw;
