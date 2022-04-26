@@ -22,6 +22,8 @@ class VideosController < ApplicationController
 
   def show
     @order = Order.find(params[:id]) unless @video.orders.blank?
+    @comment = Comment.new
+    @comments = @video.comments.includes(:user)
   end
 
   def edit
