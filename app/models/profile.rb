@@ -3,6 +3,7 @@ class Profile < ApplicationRecord
   has_one_attached :image
   has_many :videos
   has_many :orders
+  has_many :comments, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :sex

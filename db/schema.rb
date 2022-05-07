@@ -37,9 +37,11 @@ ActiveRecord::Schema.define(version: 2022_04_25_121714) do
     t.float "value", null: false
     t.text "text", null: false
     t.bigint "user_id", null: false
+    t.bigint "profile_id", null: false
     t.bigint "video_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_comments_on_profile_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
     t.index ["video_id"], name: "index_comments_on_video_id"
   end
@@ -101,6 +103,7 @@ ActiveRecord::Schema.define(version: 2022_04_25_121714) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "profiles"
   add_foreign_key "comments", "users"
   add_foreign_key "comments", "videos"
   add_foreign_key "orders", "profiles"

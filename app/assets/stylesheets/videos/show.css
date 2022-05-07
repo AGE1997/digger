@@ -134,16 +134,27 @@
 }
 
 
-/* /商品の概要 */
+/* /動画の概要 */
 
-
+/* コメント一覧 */
+.container {
+  background-color: #fff;
+  margin: 5vh 0;
+}
+.comment-field {
+  margin: 5vh 0;
+  border: 1px solid #e7e1e1;
+}
+.field {
+  margin: 2vh 0;
+}
 .comment-box {
   width: 40vw;
   background-color: #fff;
-  margin: 5vh 0;
   text-align: center;
   display: flex;
   border-radius: 100px;
+  border: 1px solid #3CCACE;
 }
 
 .comment-text {
@@ -179,9 +190,10 @@
 
 .comments {
   width: 40vw;
-  height: 40vw;
+  margin: 5vh 0;
 }
 
+/* /コメント一覧 */
 .links {
   display: flex;
   justify-content: space-between;
