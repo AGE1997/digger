@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'search'
     end
     resources :orders, only: [:new, :create]
+    resources :comments, only: [:create]
   end
   resources :profiles, only: [:show, :edit, :update]
 end

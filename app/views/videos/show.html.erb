@@ -74,20 +74,61 @@
     </div>
   </div>
   <%# /動画の概要 %>
-
-  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
+  <div class="container">
+    <% if user_signed_in? && current_user.id == @video.user_id or Order.find_by(user_id: current_user.id, video_id: @video.id).present? %>
+      <%= form_with(model: [@video, @comment], local: true) do |f| %>
+        <div class="comment-field">
+          <h4>＜コメント投稿＞</h4>
+          <div class="field" id="star">
+            <%= f.label :value, "星評価：" %>
+            <%= f.hidden_field :value, id: :review_star %>
+            <script>
+              $('#star').raty({
+                size     : 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'comment[value]',
+                half: true,
+              });
+            </script>
+          </div>
+          <div class="comment-box">
+            <%= f.text_field :text,class:"comment-text", placeholder: "Evaluate the video", rows: "1" %>
+            <div class='comment-btn'>
+              <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+              <%= f.submit "送信", class: "comment-lb-btn" %>             
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <div class="relative-comment-evaluation">
+          <span>評価：</span>
+          <span id="star-rate-<%= comment.id %>"></span>
+          <script>
+            $('#star-rate-<%= comment.id %>').raty({
+              size: 36,
+              starOff: "<%= asset_path('star-off.png') %>",
+              starOn: "<%= asset_path('star-on.png') %>",
+              starHalf: "<%= asset_path('star-half.png') %>",
+              half: true,
+              readOnly: true,
+              score: "<%= comment.value %>",
+            });
+          </script>
+          <%= comment.value %>
+          <p>
+            <strong><%= link_to comment.profile.nickname, profile_path(comment.profile.id) %>：</strong>
+            <%= comment.text %>
+          </p>
+        </div>
+      <% end %>
+    </div>
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">

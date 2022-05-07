@@ -22,6 +22,8 @@ class VideosController < ApplicationController
 
   def show
     @order = Order.find(params[:id]) unless @video.orders.blank?
+    @comment = Comment.new
+    @comments = @video.comments.includes(:user).order('created_at DESC')
   end
 
   def edit
