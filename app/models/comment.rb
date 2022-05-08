@@ -4,6 +4,6 @@ class Comment < ApplicationRecord
   belongs_to :profile
 
   with_options presence: true do
-    validates :value, :text
+    validates :text
   end
 end
