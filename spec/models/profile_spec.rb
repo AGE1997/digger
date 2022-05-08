@@ -10,6 +10,31 @@ RSpec.describe Profile, type: :model do
       it 'image、nickname、sex、genre、prefecture、birthday、biographyが存在すれば登録できる' do
         expect(@profile).to be_valid
       end
+
+      it 'sexが空でも保存できる' do
+        @profile.sex_id = 1
+        expect(@profile).to be_valid
+      end
+
+      it 'genreが空でも保存できる' do
+        @profile.genre_id = 1
+        expect(@profile).to be_valid
+      end
+
+      it 'prefectureが空でも保存できる' do
+        @profile.prefecture_id = 1
+        expect(@profile).to be_valid
+      end
+
+      it 'birthdayが空でも保存できる' do
+        @profile.birthday = ''
+        expect(@profile).to be_valid
+      end
+
+      it 'biographyが空でも保存できる' do
+        @profile.biography = ''
+        expect(@profile).to be_valid
+      end
     end
 
     context 'プロフィール登録できない場合' do
