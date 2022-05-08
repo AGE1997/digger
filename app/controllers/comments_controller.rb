@@ -2,8 +2,14 @@ class CommentsController < ApplicationController
   before_action :set_video, only: [:create]
 
   def create
-    Comment.create(comment_params)
-    redirect_to video_path(@video.id)
+    @comment = Comment.create(comment_params)
+    if @comment.save
+      redirect_to video_path(@video.id)
+    else
+      @comment = Comment.new
+      @comments = @video.comments.includes(:user).order('created_at DESC')
+      render template: "videos/show"
+    end
   end
 
   private
