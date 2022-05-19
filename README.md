@@ -75,18 +75,26 @@ digger
 * プロフィール登録
 [![Image from Gyazo](https://i.gyazo.com/0d887d2b5862a97c62bc3d69d794c3c5.gif)](https://gyazo.com/0d887d2b5862a97c62bc3d69d794c3c5)
 
+* ログイン機能
+[![Image from Gyazo](https://i.gyazo.com/e60b15f4f60abc4f5449d51f96c1f2f4.gif)](https://gyazo.com/e60b15f4f60abc4f5449d51f96c1f2f4)
+
+* プロフィール編集機能
+[![Image from Gyazo](https://i.gyazo.com/0b1ea26bdc181580a0cb28fbadb9650d.gif)](https://gyazo.com/0b1ea26bdc181580a0cb28fbadb9650d)
+
 2. 動画投稿機能
 [![Image from Gyazo](https://i.gyazo.com/5f9a35d0f8e8354b82421e84dd166ed0.gif)](https://gyazo.com/5f9a35d0f8e8354b82421e84dd166ed0)
 
 3. 動画購入機能
 [![Image from Gyazo](https://i.gyazo.com/a2c617c228102d5ccf1a3e1123a5b41a.gif)](https://gyazo.com/a2c617c228102d5ccf1a3e1123a5b41a)
 
+4. コメント機能
+[![Image from Gyazo](https://i.gyazo.com/18a13c05aeb4c4156972b9d13162e609.gif)](https://gyazo.com/18a13c05aeb4c4156972b9d13162e609)
+
 ## 実装予定の機能
-1. コメント機能
-2. 動画検索機能
-3. SNS認証
-4. ランクアップ機能
-5. フォロー機能
+1. 動画検索機能
+2. SNS認証
+3. ランクアップ機能
+4. フォロー機能
 
 
 # テーブル設計
