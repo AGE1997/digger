@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     else
       @comment = Comment.new
       @comments = @video.comments.includes(:user).order('created_at DESC')
-      render template: "videos/show"
+      render template: 'videos/show'
     end
   end
 
