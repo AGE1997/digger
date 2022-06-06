@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_video, except: [:index, :new, :create]
+  before_action :set_video, except: [:index, :new, :create, :search]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
   def index
@@ -40,11 +40,6 @@ class VideosController < ApplicationController
   def destroy
     @video.destroy
     redirect_to root_path
-  end
-
-  def search
-    index
-    render :index
   end
 
   private
