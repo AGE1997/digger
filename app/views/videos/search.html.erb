@@ -1,0 +1,12 @@
+<%= render "shared/header" %>
+<div class='main'>
+  <%# 商品一覧 %>
+  <div class='video-contents'>
+    <div class="video-container">
+      <ul class='video-lists'>
+          <%= render partial:"video", collection: @videos, locals: {video: @videos} %>
+      </ul>
+    </div>
+  </div>
+  <%# /商品一覧 %>
+</div>
